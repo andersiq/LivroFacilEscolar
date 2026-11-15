@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Consultar Livros</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f5f3;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #247a50;
+        }
+
+        .botao {
+            display: inline-block;
+            background: #247a50;
+            color: white;
+            padding: 12px 18px;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>LivroFácil Escolar</h1>
+
+    <h2>Consultar livros</h2>
+
+    <a class="botao" href="/livros/cadastrar">
+        + Cadastrar novo livro
+    </a>
+
+    
+    
+        <table>
+            <tr>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>TOMBO</th>
+                <th>Situação</th>
+                <th>Disponíveis</th>
+                <th>Ações</th>
+            </tr>
+
+            {% for exemplar in exemplares %}
+            <tr>
+                <td>{{ exemplar['titulo'] }}</td>
+                <td>{{ exemplar['autor'] }}</td>
+                <td>{{ exemplar['tombo'] }}</td>
+                <td>{{ exemplar['status'] }}</td>
+                <td>{{ exemplar['quantidade_disponivel'] }}</td>
+
+                <td>
+                    <form
+                        action="/livros/excluir/{{ exemplar['id_livro'] }}"
+                        method="POST"
+                        onsubmit="return confirm('Tem certeza que deseja excluir este livro e seus exemplares?');"
+                    >
+                        <button type="submit">Excluir</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+{% if not exemplares %}
+    <p>Nenhum exemplar cadastrado ainda.</p>
+{% endif %}
+
+{% if not exemplares %}
+    <p>Nenhum exemplar cadastrado ainda.</p>
+{% endif %}
+
+    {% if not livros %}
+        <p>Nenhum livro cadastrado ainda.</p>
+    {% endif %}
+
+    <p>
+        <a href="/">Voltar ao início</a>
+    </p>
+
+</div>
+
+</body>
+</html>

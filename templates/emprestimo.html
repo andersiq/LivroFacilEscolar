@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Empréstimo</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f5f3;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #247a50;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 20px;
+            background: #247a50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+
+    <h1>LivroFácil Escolar</h1>
+    <h2>Registrar empréstimo</h2>
+    <p style="color: #247a50; font-weight: bold;">
+    {{ mensagem }}
+</p>
+
+    <form method="POST">
+
+        <label>Nome do aluno:</label>
+        <input type="text" name="nome_aluno" required>
+
+        <label>Número TOMBO do exemplar:</label>
+        <input type="text" name="tombo"
+               maxlength="4" placeholder="Exemplo: 0001" required>
+
+        <button type="submit">Registrar empréstimo</button>
+
+    </form>
+
+    <p>
+        <a href="/">Voltar ao início</a>
+    </p>
+
+</div>
+</body>
+</html>
