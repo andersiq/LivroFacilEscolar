@@ -93,3 +93,12 @@ O projeto utiliza uma estrutura monolítica em camadas, com organização basead
 ## 📌 Status do projeto
 
 MVP desenvolvido para fins acadêmicos, com
+
+## Documentação do projeto
+
+O projeto possui documentos complementares:
+
+- [Roteiro de testes](docs/roteiro-testes.md)
+- [Estrutura e arquitetura do projeto](docs/estrutura-projeto.md)
+
+Esses documentos apresentam os procedimentos de validação do sistema e explicam a organização dos arquivos e a arquitetura utilizada.
